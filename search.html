@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Search</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<!-- Favicon -->
+<link href="images/fav-icon.png" rel="icon">
+
+<!-- Icon Font Stylesheet -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" rel="stylesheet">
+
+<!-- Material Icon Font Stylesheet -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,0,0" />
+
+<!-- Customized Bootstrap Stylesheet -->
+<link href="css/bootstrap.css" rel="stylesheet">
+<!-- Template Stylesheet -->
+<link href="css/style.css" rel="stylesheet"> 
+<link href="css/responsive.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="wrapper">
+<!-- Sidebar  -->
+<nav id="sidebar">
+
+<div class="sidebar-header">
+<img src="images/com-logo.png"/>
+<button class="btn btn-dark d-inline-block d-xl-none ml-auto" type="button" id="sidebarCollapseColse">
+<i class="material-symbols-outlined">close</i>
+</button>
+</div>
+
+<div class="components"> 
+
+<h3>Sales</h3>
+<ul class="list-unstyled ">
+<li><a href="#"> <i class="material-symbols-outlined">home</i> Dashboard</a></li>
+<li><a href="#"> <i class="material-symbols-outlined">attach_money</i> bank</a></li>
+<li><a href="#"> <i class="material-symbols-outlined">format_list_bulleted</i> Pipeline</a></li>
+</ul>
+
+<h3>Tools</h3>
+<ul class="list-unstyled ">
+<li><a href="#"> <i class="material-symbols-outlined">group</i> Team</a></li>
+<li><a href="#"><i class="material-symbols-outlined">flash_on</i> Blitz</a></li>
+<li><a href="#"><i class="material-symbols-outlined">border_vertical</i> SPRTN U</a></li>
+<li class="active"><a href="#"><i class="material-symbols-outlined">person_add</i> Recruitment</a></li>
+
+
+</ul>
+
+
+<h3>Spartan</h3>
+<ul class="list-unstyled ">
+<li><a href="#"><i class="material-symbols-outlined">event_note</i> Events</a></li>
+<li><a href="#"><i class="material-symbols-outlined">apparel</i> Swag</a></li>
+
+</ul> 
+
+
+
+
+</div>
+
+
+
+
+
+<ul class="list-unstyled ctas">
+<li><a href="#" class="article"> <i class="material-symbols-outlined">trip</i> Resources</a></li>
+</ul>
+</nav>
+
+<!-- Page Content  -->
+<div id="content">
+
+<header class="header">
+<div class="container-fluid">
+<div class="row align-items-center">
+
+<div class="col-7">
+<div class="form-inline flex-start">
+<button class="btn btn-dark d-inline-block d-xl-none ml-auto" type="button" id="sidebarCollapse">
+<i class="material-symbols-outlined">menu</i>
+</button>
+
+
+
+
+
+<h1>Recruitment</h1>
+</div></div>
+<div class="col-5 text-end">
+<div class="form-inline">
+<a href="#" class="ac-ic"> <i class="material-symbols-outlined">brand_awareness</i> </a>
+<a href="#" class="ac-ic"> <i class="material-symbols-outlined">notifications</i> <span>20</span></a>
+<a href="#" class="profile-ic">  <img src="images/profile.jpg"> </a>
+
+</div>
+
+</div>
+
+
+</div>
+</div>
+</header>
+
+<main class="main">
+<div class="container-fluid">
+
+
+
+
+
+<div class="card-body p-0">
+  <div class="row align-items-center">
+    <div class="col-9 col-md-11">
+      <div class="form-group light-input search-input">
+        <input type="text" class="form-control" id="search" placeholder="Search..." oninput="handleInput()" onblur="saveRecentSearch()">
+        <i class="material-symbols-outlined" id="searchIcon">search</i>
+      </div>
+    </div>
+    <div class="col-3 col-md-1">
+      <span id="closeIcon" style="cursor: pointer;" onclick="clearSearch()">Cancel</span>
+    </div>
+  </div>
+
+  <div class="search-list">
+    <div id="recentSearchesContainer" class="recent-searches">
+      <p class="text-muted">Recent Searches</p>
+      <ul id="recentSearchesList"></ul> <!-- List for recent searches -->
+    </div>
+
+    <div id="resultsContainer" class="search-results" style="display: none;">
+      <p class="text-muted"><span id="results">3</span> Results</p>
+      <ul id="resultsList">
+        <!-- Search items -->
+        <li class="search-item">
+          <div class="flex-card">
+            <div class="icon-box profile-ic">
+              <img src="images/profile.jpg" alt="Profile">
+            </div>
+            <div class="content-box">
+              <h4>Michael Smith</h4>
+              <p>Software Engineer</p>
+            </div>
+          </div>
+        </li>
+        <li class="search-item">
+          <div class="flex-card">
+            <div class="icon-box profile-ic">
+              <img src="images/profile.jpg" alt="Profile">
+            </div>
+            <div class="content-box">
+              <h4>Sarah Johnson</h4>
+              <p>Project Manager</p>
+            </div>
+          </div>
+        </li>
+        <li class="search-item">
+          <div class="flex-card">
+            <div class="icon-box profile-ic">
+              <img src="images/profile.jpg" alt="Profile">
+            </div>
+            <div class="content-box">
+              <h4>Shawn Carter</h4>
+              <p>UI/UX Designer</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+</div>
+
+</div>
+</main>
+
+</div>
+</div>
+
+<!-- jQuery and Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Sidebar JS -->
+<script>
+$(document).ready(function () {
+// Toggle sidebar on sidebarCollapse button click
+$('#sidebarCollapse').on('click', function () {
+$('#sidebar').toggleClass('active');
+});
+
+// Close sidebar on sidebarCollapseColse button click
+$('#sidebarCollapseColse').on('click', function () {
+$('#sidebar').removeClass('active');
+});
+});
+</script>
+<!-- Search List JS -->
+<script>
+// Load recent searches from local storage when the page loads
+document.addEventListener('DOMContentLoaded', loadRecentSearches);
+
+function handleInput() {
+  const searchInput = document.getElementById('search').value.trim();
+  if (searchInput) {
+    filterResults();
+    toggleView("results");
+  } else {
+    toggleView("recent");
+  }
+}
+
+function filterResults() {
+  const searchInput = document.getElementById('search').value.toLowerCase();
+  const items = document.querySelectorAll('.search-item');
+  let resultsCount = 0;
+
+  items.forEach((item) => {
+    const name = item.querySelector('h4').textContent.toLowerCase();
+    const role = item.querySelector('p').textContent.toLowerCase();
+
+    // Check if the search query matches name or role
+    if (name.includes(searchInput) || role.includes(searchInput)) {
+      item.style.display = 'block';
+      resultsCount++;
+    } else {
+      item.style.display = 'none';
+    }
+  });
+
+  // Update the results count
+  document.getElementById('results').textContent = resultsCount;
+}
+
+function saveRecentSearch() {
+  const searchTerm = document.getElementById('search').value.trim();
+  if (!searchTerm) return;
+
+  // Get existing recent searches from local storage
+  let recentSearches = JSON.parse(localStorage.getItem('recentSearches')) || [];
+
+  // Add new search term to recent searches if it's not already in the list
+  if (!recentSearches.includes(searchTerm)) {
+    recentSearches.unshift(searchTerm); // Add to the beginning of the array
+    if (recentSearches.length > 5) recentSearches.pop(); // Limit to 5 recent searches
+  }
+
+  // Save updated recent searches back to local storage
+  localStorage.setItem('recentSearches', JSON.stringify(recentSearches));
+  displayRecentSearches();
+}
+
+function displayRecentSearches() {
+  const recentSearchesList = document.getElementById('recentSearchesList');
+  recentSearchesList.innerHTML = ''; // Clear existing list
+
+  // Load recent searches from local storage
+  const recentSearches = JSON.parse(localStorage.getItem('recentSearches')) || [];
+
+  // Display each recent search as a list item
+  recentSearches.forEach((term, index) => {
+    const li = document.createElement('li');
+    li.classList.add('recent-search-item');
+    li.style.display = 'flex';
+    li.style.justifyContent = 'space-between';
+    li.style.alignItems = 'center';
+
+    // History icon on the left
+    const historyIcon = document.createElement('i');
+    historyIcon.classList.add('material-symbols-outlined');
+    historyIcon.textContent = 'history';
+    historyIcon.style.cursor = 'pointer';
+
+    // Search term text
+    const termText = document.createElement('span');
+    termText.textContent = term;
+    termText.style.flex = '1';
+    termText.style.cursor = 'pointer';
+    termText.addEventListener('click', () => {
+      document.getElementById('search').value = term;
+      handleInput();
+    });
+
+    // Close icon on the right
+    const closeIcon = document.createElement('i');
+    closeIcon.classList.add('material-symbols-outlined');
+    closeIcon.textContent = 'close';
+    closeIcon.style.cursor = 'pointer';
+    closeIcon.addEventListener('click', () => removeRecentSearch(index));
+
+    // Append elements to list item
+    li.appendChild(historyIcon);
+    li.appendChild(termText);
+    li.appendChild(closeIcon);
+
+    // Append list item to recent searches list
+    recentSearchesList.appendChild(li);
+  });
+}
+
+function removeRecentSearch(index) {
+  let recentSearches = JSON.parse(localStorage.getItem('recentSearches')) || [];
+  recentSearches.splice(index, 1); // Remove the specific item
+  localStorage.setItem('recentSearches', JSON.stringify(recentSearches)); // Save updated list
+  displayRecentSearches(); // Refresh the display
+}
+
+function loadRecentSearches() {
+  displayRecentSearches();
+  toggleView("recent");
+}
+
+function clearSearch() {
+  document.getElementById('search').value = '';
+  toggleView("recent");
+  filterResults();
+}
+
+function toggleView(view) {
+  const recentContainer = document.getElementById('recentSearchesContainer');
+  const resultsContainer = document.getElementById('resultsContainer');
+  
+  if (view === "results") {
+    recentContainer.style.display = 'none';
+    resultsContainer.style.display = 'block';
+  } else {
+    recentContainer.style.display = 'block';
+    resultsContainer.style.display = 'none';
+  }
+}
+
+</script>
+
+
+
+</body>
+</html>
